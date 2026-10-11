@@ -190,7 +190,7 @@ User* login(User admin[], int adminNum, User stu[], int stuNum)
         printf("请输入用户名：");
         scanf("%d", &id);               // 输入用户ID
         printf("请输入密码：");
-        scanf("%s", pwd);               // 输入密码
+        scanf("%20s", pwd);               // 输入密码
         
         // 检查是否为管理员
         for (int i = 0; i < adminNum; i++)
@@ -552,9 +552,9 @@ int addCourse(Course course[], int* courseNum)
     }
 
     printf("请输入课程名称：");
-    scanf("%s", newCourse.title);       // 输入课程名称
+    scanf("%49s", newCourse.title);       // 输入课程名称
     printf("请输入任课教师：");
-    scanf("%s", newCourse.teacher);     // 输入任课教师
+    scanf("%19s", newCourse.teacher);     // 输入任课教师
     printf("请输入最大人数：");
     scanf("%d", &newCourse.maxNum);     // 输入最大人数
     newCourse.selectNum = 0;            // 初始化已选人数为0
@@ -647,9 +647,9 @@ int editCourse(Course course[], int courseNum)
     
     // 修改课程信息
     printf("请输入新的课程名称：");
-    scanf("%s", c->title);              // 修改课程名称
+    scanf("%49s", c->title);              // 修改课程名称
     printf("请输入新的任课教师：");
-    scanf("%s", c->teacher);            // 修改任课教师
+    scanf("%19s", c->teacher);            // 修改任课教师
     printf("请输入新的最大人数：");
     scanf("%d", &c->maxNum);            // 修改最大人数
     
@@ -735,9 +735,9 @@ int addStu(User stu[], int* stuNum, User admin[], int adminNum)
     }
 
     printf("请输入姓名：");
-    scanf("%s", newStu.name);           // 输入姓名
+    scanf("%19s", newStu.name);           // 输入姓名
     printf("请输入密码：");
-    scanf("%s", newStu.pwd);            // 输入密码
+    scanf("%19s", newStu.pwd);            // 输入密码
 
     newStu.type = 2;                    // 设置用户类型为学生
     newStu.selectNum = 0;               // 初始化已选课程数量为0
@@ -831,9 +831,9 @@ int editStu(User stu[], int stuNum)
     
     // 修改学生信息
     printf("请输入新的姓名：");
-    scanf("%s", stu[index].name);       // 修改姓名
+    scanf("%19s", stu[index].name);       // 修改姓名
     printf("请输入新的密码：");
-    scanf("%s", stu[index].pwd);        // 修改密码
+    scanf("%19s", stu[index].pwd);        // 修改密码
     
     printf("修改学生信息成功！\n");
     return 1;

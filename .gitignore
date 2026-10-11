@@ -1,0 +1,13 @@
+# 编译产物
+*.exe
+*.o
+*.obj
+*.out
+
+# 编辑器 / 系统文件
+.vscode/
+.idea/
+*.layout
+*.depend
+.DS_Store
+Thumbs.db

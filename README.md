@@ -41,38 +41,20 @@ C_course_selection/
 ├─ README.md
 └─ 选课系统/
    ├─ course_system.c
-   ├─ course_system.exe
    ├─ course.txt
    ├─ student.txt
-   ├─ admin.txt
-   ├─ 未命名1.cpp
-   └─ 未命名1.exe
+   └─ admin.txt
 ```
 
 说明：
 
 - `course_system.c` 是主程序源码。
 - `course.txt`、`student.txt`、`admin.txt` 是程序启动时读取的初始化数据文件。
-- `course_system.exe` 是仓库中已提供的可执行文件。
-- `未命名1.cpp` 与 `未命名1.exe` 看起来是开发过程中保留的历史文件，目前主 README 以 `course_system.c` 为准。
+- 仓库不再附带可执行文件，请按下面的方式自行编译。
 
 ## 运行方式
 
-### 方式一：直接运行仓库中的可执行文件
-
-先进入程序目录，再运行：
-
-```powershell
-cd .\选课系统
-.\course_system.exe
-```
-
-注意：
-
-- 必须在 `选课系统` 目录下运行程序。
-- 因为源码里使用的是相对路径读取 `course.txt`、`student.txt`、`admin.txt`，如果在别的目录启动，程序会提示无法打开数据文件。
-
-### 方式二：自行编译后运行
+### 编译后运行
 
 如果你的电脑安装了 GCC / MinGW，可以在 `选课系统` 目录下执行：
 
@@ -169,9 +151,9 @@ gcc .\course_system.c -o .\course_system.exe
 
 - 当前版本只在启动时读取文本文件，运行过程中的修改只保存在内存中。
 - 程序退出后，新增课程、删改学生、选课结果都不会自动写回到文本文件。
-- 课程名、教师名、姓名等字段通过 `scanf("%s")` 读取，默认不支持带空格的输入。
+- 课程名、教师名、姓名等字段通过带宽度限制的 `scanf` 读取，不支持带空格的输入，超出长度的部分会被截断。
 - 输入校验较基础，如果输入类型和程序预期不一致，可能出现异常行为。
-- 项目目前主要面向 Windows 控制台环境，仓库中也附带了 `.exe` 文件。
+- 项目目前主要面向 Windows 控制台环境。
 
 ## 适合作为课程设计展示的亮点
 
